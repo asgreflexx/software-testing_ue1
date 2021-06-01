@@ -1,0 +1,51 @@
+Mitarbeiter ist aus Sekretariat
+Mitarbeiter ist aus Poststelle
+Mitarbeiter ist aus anderen Stellen
+
+Given Mitarbeiter ist <= 75 Jahre bei der Firma
+When Mitarbeiter ist aus anderen Stellen
+Then erhält er einen Bonus
+
+Given  Mitarbeiter ist <= 2 Jahre bei der Firma
+When Mitarbeiter seinen Gehaltsbonus bekommt
+Then erhält er einen Bonus von 0% seines Gehalts
+
+Given Mitarbeiter ist > 75 Jahre bei der Firma
+When Mitarbeiter seinen Gehaltsbonus bekommt
+Then erhält er keinen Bonus
+
+Given Mitarbeiter ist > 2 Jahre bei der Firma
+And Mitarbeiter ist aus anderen Stellen
+When Mitarbeiter seinen Gehaltsbonus bekommt
+Then erhält er einen Bonus von 50% seines Gehalts
+
+Given  Mitarbeiter ist > 4 Jahre bei der Firma
+And Mitarbeiter ist aus anderen Stellen
+When Mitarbeiter seinen Gehaltsbonus bekommt
+Then erhält er einen Bonus von 80% seines Gehalts
+
+Given  Mitarbeiter ist > 10 Jahre bei der Firma
+And Mitarbeiter ist aus anderen Stellen
+When Mitarbeiter seinen Gehaltsbonus bekommt
+Then erhält er einen Bonus von 120% seines Gehalts
+
+********************************************************
+
+## Special Testcases When Mitarbeiter Poststelle oder Sekretariat ##
+
+Given Mitarbeiter ist > 2 Jahre bei der Firma
+And Mitarbeiter ist aus Sekretariat oder Poststelle
+When Mitarbeiter seinen Gehaltsbonus bekommt
+Then erhält er einen Bonus von 100% seines Gehalts
+
+Given  Mitarbeiter ist > 4 Jahre bei der Firma
+And Mitarbeiter ist aus Sekretariat oder Poststelle
+When Mitarbeiter seinen Gehaltsbonus bekommt
+Then erhält er einen Bonus von 160% seines Gehalts
+
+Given  Mitarbeiter ist > 10 Jahre bei der Firma
+And Mitarbeiter ist aus Sekretariat oder Poststelle
+When Mitarbeiter seinen Gehaltsbonus bekommt
+Then erhält er einen Bonus von 240% seines Gehalts
+
+*********************************************************
